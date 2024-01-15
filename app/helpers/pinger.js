@@ -42,15 +42,21 @@ export const ping = async ({
     }
 
     const checkOpts = [port, {host: ip || host, timeout}];
-    let online = await isPortReachable(...checkOpts);
+    let isReachable = await isPortReachable(...checkOpts);
 
     // one retry
-    if (!online) {
+    if (!isReachable) {
         await sleep(retry);
-        online = await isPortReachable(...checkOpts);
+        isReachable = await isPortReachable(...checkOpts);
     }
 
-    const output = {host, ip, port, online};
+    const output = {
+        host,
+        ip,
+        port,
+        status: isReachable ? 'online' : 'offline',
+        code: isReachable ? 1 : 0,
+    };
 
     let previousCheck;
 
@@ -64,11 +70,11 @@ export const ping = async ({
     }
 
     if (previousCheck) {
-        output.onlineChanged = previousCheck.onlineChanged;
+        output.changed = previousCheck.changed;
     }
 
-    if (previousCheck?.online !== online) {
-        output.onlineChanged = Date.now();
+    if (previousCheck?.status !== output.status) {
+        output.changed = Date.now();
         await fs.mkdir(path.dirname(lastStateFile), {recursive: true});
         await fs.writeFile(lastStateFile, JSON.stringify(output));
     }

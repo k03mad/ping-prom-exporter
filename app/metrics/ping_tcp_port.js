@@ -8,9 +8,10 @@ export default {
     name: getCurrentFilename(import.meta.url),
     help: 'Pinger',
     labelNames: [
+        'type',
         'host',
         'port',
-        'online',
+        'status',
     ],
 
     async collect(ctx) {
@@ -21,10 +22,18 @@ export default {
 
         data.forEach(elem => {
             ctx.labels(
+                'table',
                 elem.host || elem.ip,
                 elem.port,
-                elem.online,
-            ).set(elem.onlineChanged);
+                elem.status,
+            ).set(elem.changed);
+
+            ctx.labels(
+                'timeline',
+                elem.host || elem.ip,
+                elem.port,
+                null,
+            ).set(elem.code);
         });
     },
 };
