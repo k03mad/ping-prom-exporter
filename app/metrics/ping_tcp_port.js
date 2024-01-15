@@ -9,7 +9,6 @@ export default {
     help: 'Pinger',
     labelNames: [
         'host',
-        'ip',
         'port',
         'online',
     ],
@@ -22,8 +21,7 @@ export default {
 
         data.forEach(elem => {
             ctx.labels(
-                elem.host || null,
-                elem.ip || null,
+                elem.host || elem.ip,
                 elem.port,
                 elem.online,
             ).set(elem.onlineChanged);
