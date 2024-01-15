@@ -1,0 +1,46 @@
+{
+  "name": "ping-prom-exporter",
+  "version": "1.0.0",
+  "description": "[TCP Ping Port — Prometheus] exporter",
+  "maintainers": [
+    "Kirill Molchanov <k03.mad@gmail.com"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/k03mad/ping-prom-exporter.git"
+  },
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=21"
+  },
+  "dependencies": {
+    "@k03mad/simple-date": "1.0.0",
+    "cacheable-lookup": "7.0.0",
+    "chalk": "5.3.0",
+    "compression": "1.7.4",
+    "express": "4.18.2",
+    "helmet": "7.1.0",
+    "is-port-reachable": "4.0.0",
+    "morgan": "1.10.0",
+    "prom-client": "15.1.0"
+  },
+  "devDependencies": {
+    "@k03mad/eslint-config": "19.3.0",
+    "eslint": "8.56.0",
+    "husky": "8.0.3",
+    "nodemon": "3.0.2"
+  },
+  "scripts": {
+    "lint": "npm run lint:eslint",
+    "lint:eslint": "eslint ./ --cache",
+    "clean": "npm run clean:modules && npm run clean:eslint:cache",
+    "clean:modules": "rm -rf ./node_modules || true",
+    "clean:eslint:cache": "rm -rf .eslintcache || true",
+    "setup": "npm run clean && npm i",
+    "start": "node app/server",
+    "start:dev": "DEBUG=mad* nodemon app/server",
+    "prepare": "husky install || true"
+  }
+}

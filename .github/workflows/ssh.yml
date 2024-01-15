@@ -1,0 +1,25 @@
+name: SSH
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  ssh:
+    name: SSH
+    environment: vds
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run commands
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          port: ${{ secrets.SSH_PORT }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            cd ~/git/ping-prom-exporter
+            git pull
+            ~/.nvm/nvm-exec npm run setup
+            systemctl restart ping-exporter.service
