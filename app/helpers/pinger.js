@@ -31,16 +31,23 @@ export const ping = async ({
     );
 
     if (host) {
-        const lookup = await cacheable.lookupAsync(host);
-        ip = lookup.address;
+        try {
+            const lookup = await cacheable.lookupAsync(host);
+            ip = lookup.address;
+        } catch (err) {
+            if (err.code !== 'ENOTFOUND') {
+                throw err;
+            }
+        }
     }
 
-    let online = await isPortReachable(port, {host: ip, timeout});
+    const checkOpts = [port, {host: ip || host, timeout}];
+    let online = await isPortReachable(...checkOpts);
 
     // one retry
     if (!online) {
         await sleep(retry);
-        online = await isPortReachable(port, {host: ip, timeout});
+        online = await isPortReachable(...checkOpts);
     }
 
     const output = {host, ip, port, online};
