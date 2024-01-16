@@ -11,7 +11,7 @@
 — Create `targets.json`
 
 ```bash
-cp targets-templates.json targets.json
+cp targets-template.json targets.json
 ```
 
 — [Use correct Node.JS version](.nvmrc) \
