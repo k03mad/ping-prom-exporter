@@ -10,6 +10,7 @@ export default {
     labelNames: [
         'type',
         'host',
+        'ip',
         'port',
         'status',
     ],
@@ -23,14 +24,16 @@ export default {
         data.forEach(elem => {
             ctx.labels(
                 'table',
-                elem.host || elem.ip,
+                elem.host,
+                elem.ip,
                 elem.port,
                 elem.status,
             ).set(elem.changed);
 
             ctx.labels(
                 'timeline',
-                elem.host || elem.ip,
+                elem.host,
+                null,
                 elem.port,
                 null,
             ).set(elem.code);

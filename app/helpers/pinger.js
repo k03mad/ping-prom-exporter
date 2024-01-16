@@ -1,4 +1,5 @@
 import fs from 'node:fs/promises';
+import net from 'node:net';
 import path from 'node:path';
 
 import CacheableLookup from 'cacheable-lookup';
@@ -13,24 +14,26 @@ const cacheable = new CacheableLookup();
 /**
  * @param {object} opts
  * @param {string} opts.host
- * @param {string} opts.ip
  * @param {string} [opts.port]
  * @param {number} [opts.retry] ms
  * @param {number} [opts.timeout] ms
  */
 export const ping = async ({
     host,
-    ip,
     port = 80,
     timeout = 1000,
     retry = 1000,
 } = {}) => {
+    let ip, previousCheck;
+
     const lastStateFile = path.join(
         env.ping.lastStateFolder,
-        `${host || ip}_${port}.json`,
+        `${host}_${port}.json`,
     );
 
-    if (host) {
+    if (net.isIP(host) > 0) {
+        ip = host;
+    } else {
         try {
             const lookup = await cacheable.lookupAsync(host);
             ip = lookup.address;
@@ -52,13 +55,11 @@ export const ping = async ({
 
     const output = {
         host,
-        ip,
+        ip: ip || null,
         port,
         status: isReachable ? 'online' : 'offline',
         code: isReachable ? 1 : 0,
     };
-
-    let previousCheck;
 
     try {
         const savedData = await fs.readFile(lastStateFile);
