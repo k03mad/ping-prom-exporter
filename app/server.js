@@ -1,4 +1,5 @@
 import {getDateYMDHMS} from '@k03mad/simple-date';
+import {log} from '@k03mad/simple-log';
 import compression from 'compression';
 import express from 'express';
 import helmet from 'helmet';
@@ -7,7 +8,6 @@ import morgan from 'morgan';
 import env from '../env.js';
 
 import {nameText, numText} from './helpers/colors.js';
-import {log} from './helpers/logging.js';
 import {packageJson} from './helpers/parse.js';
 import register from './prom.js';
 

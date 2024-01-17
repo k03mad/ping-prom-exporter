@@ -1,10 +1,10 @@
 import os from 'node:os';
 
+import {logError} from '@k03mad/simple-log';
 import client from 'prom-client';
 
 import env from '../env.js';
 
-import {logError} from './helpers/logging.js';
 import {packageJson} from './helpers/parse.js';
 import * as metrics from './metrics/_index.js';
 
