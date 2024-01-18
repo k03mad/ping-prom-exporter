@@ -1,33 +1,13 @@
-import {getDateYMDHMS} from '@k03mad/simple-date';
-import {log} from '@k03mad/simple-log';
-import compression from 'compression';
-import express from 'express';
-import helmet from 'helmet';
-import morgan from 'morgan';
+import {startMetricsServer} from '@k03mad/simple-prom';
 
 import env from '../env.js';
 
-import {nameText, numText} from './helpers/colors.js';
 import {packageJson} from './helpers/parse.js';
-import register from './prom.js';
+import * as metrics from './metrics/_index.js';
 
-const app = express();
-
-if (env.debug) {
-    app.use(morgan('combined'));
-}
-
-app.use(helmet());
-app.use(compression());
-
-app.get('/metrics', async (req, res) => {
-    const metrics = await register.metrics();
-    res.send(metrics);
+startMetricsServer({
+    appName: packageJson.name,
+    port: env.server.port,
+    debug: env.debug,
+    metrics,
 });
-
-app.listen(env.server.port, () => log([
-    `[${getDateYMDHMS()}]`,
-    nameText(packageJson.name),
-    'started on port',
-    numText(env.server.port),
-].join(' ')));
