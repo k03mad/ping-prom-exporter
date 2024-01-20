@@ -20,6 +20,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             cd ~/git/ping-prom-exporter
+            git reset --hard
             git pull
             ~/.nvm/nvm-exec npm run setup
             systemctl restart ping-exporter.service
