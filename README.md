@@ -6,7 +6,7 @@
 • [tin-invest-prom-exporter](https://github.com/k03mad/tin-invest-prom-exporter) \
 • [ya-iot-prom-exporter](https://github.com/k03mad/ya-iot-prom-exporter)
 
-:: [grafana-dashboards](https://github.com/k03mad/grafana-dashboards) ::
+:: [grafana-dashboards](https://github.com/k03mad/grafana-dashboards/tree/master/export) ::
 
 # [TCP Ping Port — Prometheus] exporter
 
