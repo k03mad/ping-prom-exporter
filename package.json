@@ -21,9 +21,9 @@
     "is-port-reachable": "4.0.0"
   },
   "devDependencies": {
-    "@k03mad/eslint-config": "19.4.0",
+    "@k03mad/eslint-config": "20.2.0",
     "eslint": "8.56.0",
-    "husky": "8.0.3",
+    "husky": "9.0.5",
     "nodemon": "3.0.3"
   },
   "scripts": {
@@ -35,6 +35,6 @@
     "setup": "npm run clean && pnpm i",
     "start": "node app/server",
     "start:dev": "DEBUG=mad* nodemon app/server",
-    "prepare": "husky install || true"
+    "prepare": "husky || true"
   }
 }
