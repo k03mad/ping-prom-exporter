@@ -23,8 +23,8 @@ devDependencies:
     specifier: 8.56.0
     version: 8.56.0
   husky:
-    specifier: 9.0.5
-    version: 9.0.5
+    specifier: 9.0.7
+    version: 9.0.7
   nodemon:
     specifier: 3.0.3
     version: 3.0.3
@@ -1587,8 +1587,8 @@ packages:
       toidentifier: 1.0.1
     dev: false
 
-  /husky@9.0.5:
-    resolution: {integrity: sha512-/EX48XLor4FczjgdJjwK4qMETrJxJqF4rkgo+NUeK8b2F4TV6s5QxAuG2JZfxm4b9WnrgBGS7bA/JK+H5CKg+A==}
+  /husky@9.0.7:
+    resolution: {integrity: sha512-vWdusw+y12DUEeoZqW1kplOFqk3tedGV8qlga8/SF6a3lOiWLqGZZQvfWvY0fQYdfiRi/u1DFNpudTSV9l1aCg==}
     engines: {node: '>=18'}
     hasBin: true
     dev: true
