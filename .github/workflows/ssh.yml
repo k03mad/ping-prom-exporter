@@ -7,12 +7,10 @@ on:
 
 jobs:
   ssh:
-    name: SSH
     environment: vds
     runs-on: ubuntu-latest
     steps:
-      - name: Run commands
-        uses: appleboy/ssh-action@v1.0.3
+      - uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.SSH_HOST }}
           port: ${{ secrets.SSH_PORT }}

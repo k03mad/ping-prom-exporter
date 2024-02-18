@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@k03mad/simple-prom':
-    specifier: 2.1.0
-    version: 2.1.0
+    specifier: 2.2.0
+    version: 2.2.0
   cacheable-lookup:
     specifier: 7.0.0
     version: 7.0.0
@@ -153,24 +153,24 @@ packages:
       - vue-eslint-parser
     dev: true
 
-  /@k03mad/simple-date@1.0.0:
-    resolution: {integrity: sha512-VMvhf0a73RRD1ZFF+/0Yo5/uD4ZQbrZ2pc7/HQIc+xfiJAZ4tCz9RNLw5DQVf4EAjnQxnuhf1xSB6ITepTu0+Q==}
+  /@k03mad/simple-date@1.0.1:
+    resolution: {integrity: sha512-2jf6gfmg8Td1iO4DZvFyoTNWW4UyltHPYDwoM77trFHqaRXT3dMuTHGf1MpsshnH+ce8ZETmF1d+DBpfT2EUNA==}
     engines: {node: '>=20'}
     dev: false
 
-  /@k03mad/simple-log@2.1.0:
-    resolution: {integrity: sha512-D4m9i+UcnlJcuYDuZ8hq5ubbe72nNOvRMRLp8QZ3uTHnhOX3QqD4utkIcRoZZr6KH5fcHYPT1A5Oz0ZGObG5Uw==}
+  /@k03mad/simple-log@2.1.1:
+    resolution: {integrity: sha512-xhW93+N0Q9WEMWs+fD6WYgg+vwsUJlunLl2CafmYbfRbdsxVhEZ/k1pJ9gtJUHLVU/gY2xSTCzrFXWlxpnIxaQ==}
     engines: {node: '>=20'}
     dependencies:
-      '@k03mad/simple-date': 1.0.0
+      '@k03mad/simple-date': 1.0.1
     dev: false
 
-  /@k03mad/simple-prom@2.1.0:
-    resolution: {integrity: sha512-i2zAlQIidDCgul3mqOIX7CKOjjsIraAB8czoILvTK1t+80lzcii1v8uOGGGFFAUSjIB6LPJgfXvBoVwLYkYsdQ==}
+  /@k03mad/simple-prom@2.2.0:
+    resolution: {integrity: sha512-8COD81QEwf4EZDAukvTwMxGvQcY5vCpV9hztFZHONKdgTNYHjtyjSfY/6QR+BeyaHZNnniHllfWqlOaGzgxTjg==}
     engines: {node: '>=20'}
     dependencies:
-      '@k03mad/simple-date': 1.0.0
-      '@k03mad/simple-log': 2.1.0
+      '@k03mad/simple-date': 1.0.1
+      '@k03mad/simple-log': 2.1.1
       chalk: 5.3.0
       compression: 1.7.4
       express: 4.18.2
