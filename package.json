@@ -16,12 +16,12 @@
     "node": ">=20"
   },
   "dependencies": {
-    "@k03mad/simple-prom": "2.2.0",
+    "@k03mad/simple-prom": "2.2.1",
     "cacheable-lookup": "7.0.0",
     "is-port-reachable": "4.0.0"
   },
   "devDependencies": {
-    "@k03mad/eslint-config": "20.3.0",
+    "@k03mad/eslint-config": "20.4.1",
     "eslint": "8.57.0",
     "husky": "9.0.11",
     "nodemon": "3.1.0"
