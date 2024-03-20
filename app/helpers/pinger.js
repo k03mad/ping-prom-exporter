@@ -14,7 +14,7 @@ import {sleep} from './promise.js';
  * @param {4|6} family
  * @returns {Promise<string>}
  */
-const lookupCache = (host, family) => new Promise((resolve, reject) => {
+const ipLookup = (host, family) => new Promise((resolve, reject) => {
     lookup(host, {family}, (error, address) => {
         if (error) {
             reject(error);
@@ -48,9 +48,9 @@ export const ping = async ({
         ip = host;
     } else {
         try {
-            ip = await lookupCache(host, 4);
+            ip = await ipLookup(host, 4);
         } catch {
-            ip = await lookupCache(host, 6);
+            ip = await ipLookup(host, 6);
         }
     }
 
