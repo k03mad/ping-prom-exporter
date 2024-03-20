@@ -2,14 +2,27 @@ import fs from 'node:fs/promises';
 import net from 'node:net';
 import path from 'node:path';
 
-import CacheableLookup from 'cacheable-lookup';
+import {lookup} from 'dns-lookup-cache';
 import isPortReachable from 'is-port-reachable';
 
 import env from '../../env.js';
 
 import {sleep} from './promise.js';
 
-const cacheable = new CacheableLookup();
+/**
+ * @param {string} host
+ * @param {4|6} family
+ * @returns {Promise<string>}
+ */
+const lookupCache = (host, family) => new Promise((resolve, reject) => {
+    lookup(host, {family}, (error, address) => {
+        if (error) {
+            reject(error);
+        }
+
+        resolve(address);
+    });
+});
 
 /**
  * @param {object} opts
@@ -35,12 +48,9 @@ export const ping = async ({
         ip = host;
     } else {
         try {
-            const lookup = await cacheable.lookupAsync(host);
-            ip = lookup.address;
-        } catch (err) {
-            if (err.code !== 'ENOTFOUND') {
-                throw err;
-            }
+            ip = await lookupCache(host, 4);
+        } catch {
+            ip = await lookupCache(host, 6);
         }
     }
 

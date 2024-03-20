@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@k03mad/simple-prom": "2.2.1",
-    "cacheable-lookup": "7.0.0",
+    "dns-lookup-cache": "1.0.4",
     "is-port-reachable": "4.0.0"
   },
   "devDependencies": {
