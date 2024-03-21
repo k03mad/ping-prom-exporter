@@ -18,7 +18,8 @@
   "dependencies": {
     "@k03mad/simple-prom": "2.2.1",
     "dns-lookup-cache": "1.0.4",
-    "is-port-reachable": "4.0.0"
+    "is-port-reachable": "4.0.0",
+    "p-map": "7.0.1"
   },
   "devDependencies": {
     "@k03mad/eslint-config": "20.4.1",

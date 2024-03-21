@@ -50,7 +50,9 @@ export const ping = async ({
         try {
             ip = await ipLookup(host, 4);
         } catch {
-            ip = await ipLookup(host, 6);
+            try {
+                ip = await ipLookup(host, 6);
+            } catch {}
         }
     }
 
@@ -63,14 +65,6 @@ export const ping = async ({
         isReachable = await isPortReachable(...checkOpts);
     }
 
-    const output = {
-        host,
-        ip: ip || null,
-        port,
-        status: isReachable ? 'online' : 'offline',
-        code: isReachable ? 1 : 0,
-    };
-
     try {
         const savedData = await fs.readFile(lastStateFile);
         previousCheck = JSON.parse(savedData);
@@ -79,6 +73,21 @@ export const ping = async ({
             throw err;
         }
     }
+
+    const output = {
+        host,
+        ip: ip || null,
+        port,
+        ...isReachable
+            ? {
+                status: 'online',
+                code: 1,
+            }
+            : {
+                status: 'offline',
+                code: 0,
+            },
+    };
 
     if (previousCheck) {
         output.changed = previousCheck.changed;

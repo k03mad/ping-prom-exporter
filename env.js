@@ -6,6 +6,7 @@ const env = {
     },
     debug: process.env.DEBUG,
     ping: {
+        concurrency: 2,
         lastStateFolder: '.pinger',
         targetsFile: 'targets.json',
     },
