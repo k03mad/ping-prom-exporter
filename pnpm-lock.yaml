@@ -15,8 +15,8 @@ dependencies:
     specifier: 4.0.0
     version: 4.0.0
   p-map:
-    specifier: 7.0.1
-    version: 7.0.1
+    specifier: 7.0.2
+    version: 7.0.2
 
 devDependencies:
   '@k03mad/eslint-config':
@@ -2183,8 +2183,8 @@ packages:
       p-limit: 3.1.0
     dev: true
 
-  /p-map@7.0.1:
-    resolution: {integrity: sha512-2wnaR0XL/FDOj+TgpDuRb2KTjLnu3Fma6b1ZUwGY7LcqenMcvP/YFpjpbPKY6WVGsbuJZRuoUz8iPrt8ORnAFw==}
+  /p-map@7.0.2:
+    resolution: {integrity: sha512-z4cYYMMdKHzw4O5UkWJImbZynVIo0lSGTXc7bzB1e/rrDqkgGUNysK/o4bTr+0+xKvvLoTyGqYC4Fgljy9qe1Q==}
     engines: {node: '>=18'}
     dev: false
 
