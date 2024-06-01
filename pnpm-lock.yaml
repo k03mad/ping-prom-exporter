@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@k03mad/simple-prom':
-    specifier: 2.2.3
-    version: 2.2.3
+    specifier: 3.0.0
+    version: 3.0.0
   dns-lookup-cache:
     specifier: 1.0.4
     version: 1.0.4
@@ -189,8 +189,8 @@ packages:
       '@k03mad/simple-date': 1.0.2
     dev: false
 
-  /@k03mad/simple-prom@2.2.3:
-    resolution: {integrity: sha512-bTHSKakkX4ZmkjOdSjtxt2s8zhwwXFmpeAOkOYAP+AAq1uCY04mdhzL5hykkhrmnrvnQxjxL/sgCuoRsg6DGNg==}
+  /@k03mad/simple-prom@3.0.0:
+    resolution: {integrity: sha512-HCZ0n0uawowtgAB6hUIztTLF+fJBL2JAnOPE4vPnLQdc+bymUxz0dt7bWHG4HKwdUL++Kkgq6Sgj0ibqmvdMuA==}
     engines: {node: '>=20'}
     dependencies:
       '@k03mad/simple-date': 1.0.3
