@@ -1,0 +1,26 @@
+name: SSH
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  ssh-pi:
+    environment: pi
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          port: ${{ secrets.SSH_PORT }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            set -x
+            lsb_release -a
+            cd ~/git/ping-prom-exporter
+            git reset --hard
+            git pull
+            ~/.nvm/nvm-exec npm run setup
+            sudo systemctl restart ping-exporter.service
