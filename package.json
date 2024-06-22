@@ -13,7 +13,7 @@
   "private": true,
   "type": "module",
   "engines": {
-    "node": ">=22"
+    "node": ">=20"
   },
   "dependencies": {
     "@k03mad/simple-prom": "3.1.0",
