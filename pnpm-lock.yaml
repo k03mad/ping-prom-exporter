@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@k03mad/simple-prom':
-        specifier: 3.2.0
-        version: 3.2.0
+        specifier: 3.2.1
+        version: 3.2.1
       dns-lookup-cache:
         specifier: 1.0.4
         version: 1.0.4
@@ -87,20 +87,16 @@ packages:
     resolution: {integrity: sha512-XUY1KpSFmVwPwlJxdkAssrEmdAJyDFbSGx6Xlwk8wGX4cnsiCZqqjdVVhFwioKP1fWgbB4/wYadfx8svwkPgzA==}
     engines: {node: '>=20'}
 
-  '@k03mad/simple-date@1.1.1':
-    resolution: {integrity: sha512-PNc1AdQ/8ZL/cJ8aFV25NFBVGvdvUEW5slGd/D26Pn9a2+0YdRxKHT8fIeVX/FOS5ORIsBHDPyoHrugp8gcJ1g==}
-    engines: {node: '>=20'}
-
   '@k03mad/simple-date@1.2.0':
     resolution: {integrity: sha512-Xap6IBGEKAQmzmub7JSDZBvHUi1VMOZAjiAoTwJv8rK00P/46VVrnLkAnEN3zmg8AS6wBCSNGAOkARBsBw0t6Q==}
     engines: {node: '>=20'}
 
-  '@k03mad/simple-log@2.2.2':
-    resolution: {integrity: sha512-VtRfymTRw5pxywyLx/NhnTth7VM6l4v0pPTQ2CUgxzduRXu/Eh5V0iNWf9ORuR2fBnRARN3XuuKnSJaORNIWjg==}
+  '@k03mad/simple-log@2.3.0':
+    resolution: {integrity: sha512-cegJ94YL7cx6lv4+1GKivxHqT9cBEgauEoK+kp+LI4RniwOip0irOc9N9b3YssqxEpd4foOD38Vg1xmMJR7rpA==}
     engines: {node: '>=20'}
 
-  '@k03mad/simple-prom@3.2.0':
-    resolution: {integrity: sha512-Cu2Hn/PgJlAgP6EXoUPYV4BQUPNV/m7Ha9qo+G0NoW/V8hc2yyOJGqs5dSrMN/mctLYWVYLAt2UZuvmCpgYM1w==}
+  '@k03mad/simple-prom@3.2.1':
+    resolution: {integrity: sha512-fUL7YWREwxmAwNpZkFld2Zb7bp495dhub09grXXHfVWnhs/C0NZgo88FhoCpiWGYfA6mdZqRFGQQVVN4rIFgew==}
     engines: {node: '>=20'}
 
   '@nodelib/fs.scandir@2.1.5':
@@ -1708,18 +1704,16 @@ snapshots:
       - typescript
       - vue-eslint-parser
 
-  '@k03mad/simple-date@1.1.1': {}
-
   '@k03mad/simple-date@1.2.0': {}
 
-  '@k03mad/simple-log@2.2.2':
-    dependencies:
-      '@k03mad/simple-date': 1.1.1
-
-  '@k03mad/simple-prom@3.2.0':
+  '@k03mad/simple-log@2.3.0':
     dependencies:
       '@k03mad/simple-date': 1.2.0
-      '@k03mad/simple-log': 2.2.2
+
+  '@k03mad/simple-prom@3.2.1':
+    dependencies:
+      '@k03mad/simple-date': 1.2.0
+      '@k03mad/simple-log': 2.3.0
       chalk: 5.3.0
       compression: 1.7.4
       express: 4.19.2
