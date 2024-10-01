@@ -16,7 +16,7 @@
     "node": ">=20"
   },
   "dependencies": {
-    "@k03mad/simple-prom": "3.2.1",
+    "@k03mad/simple-prom": "3.3.0",
     "dns-lookup-cache": "1.0.4",
     "is-port-reachable": "4.0.0",
     "p-map": "7.0.2"

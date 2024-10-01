@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@k03mad/simple-prom':
-        specifier: 3.2.1
-        version: 3.2.1
+        specifier: 3.3.0
+        version: 3.3.0
       dns-lookup-cache:
         specifier: 1.0.4
         version: 1.0.4
@@ -732,12 +732,16 @@ packages:
     resolution: {integrity: sha512-Xap6IBGEKAQmzmub7JSDZBvHUi1VMOZAjiAoTwJv8rK00P/46VVrnLkAnEN3zmg8AS6wBCSNGAOkARBsBw0t6Q==}
     engines: {node: '>=20'}
 
-  '@k03mad/simple-log@2.3.0':
-    resolution: {integrity: sha512-cegJ94YL7cx6lv4+1GKivxHqT9cBEgauEoK+kp+LI4RniwOip0irOc9N9b3YssqxEpd4foOD38Vg1xmMJR7rpA==}
+  '@k03mad/simple-date@2.0.0':
+    resolution: {integrity: sha512-S0awuWgfhTFl33GHPHu4uPobYZva2D2zpZLfjjZ8wfyGpF+MDLi7dH6ADIAuNt34H5deriFLT27VBjPEJp3yFg==}
     engines: {node: '>=20'}
 
-  '@k03mad/simple-prom@3.2.1':
-    resolution: {integrity: sha512-fUL7YWREwxmAwNpZkFld2Zb7bp495dhub09grXXHfVWnhs/C0NZgo88FhoCpiWGYfA6mdZqRFGQQVVN4rIFgew==}
+  '@k03mad/simple-log@4.0.0':
+    resolution: {integrity: sha512-jo2/m12JC8wuA1Ctk7ZpO57mOfYbIlp2Q4ioI7ORaUKx91OPXR6t2v477TTQNdE1AZU9rh3xxKHl2ztZZduXtQ==}
+    engines: {node: '>=20'}
+
+  '@k03mad/simple-prom@3.3.0':
+    resolution: {integrity: sha512-UI1sQUX7NjS7cNMGW3UOX4PoNg1xLzfeh9CmdewfgrqMzxD/XGVeu18LTNocP5Gkpb0fEUfIFTg3AVa4Ab3TLQ==}
     engines: {node: '>=20'}
 
   '@nicolo-ribaudo/eslint-scope-5-internals@5.1.1-v1':
@@ -3529,14 +3533,16 @@ snapshots:
 
   '@k03mad/simple-date@1.2.0': {}
 
-  '@k03mad/simple-log@2.3.0':
+  '@k03mad/simple-date@2.0.0': {}
+
+  '@k03mad/simple-log@4.0.0':
     dependencies:
       '@k03mad/simple-date': 1.2.0
 
-  '@k03mad/simple-prom@3.2.1':
+  '@k03mad/simple-prom@3.3.0':
     dependencies:
-      '@k03mad/simple-date': 1.2.0
-      '@k03mad/simple-log': 2.3.0
+      '@k03mad/simple-date': 2.0.0
+      '@k03mad/simple-log': 4.0.0
       chalk: 5.3.0
       compression: 1.7.4
       express: 4.19.2
